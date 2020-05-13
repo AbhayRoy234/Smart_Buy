@@ -1,9 +1,6 @@
 import mysql.connector
 import bcrypt
 from models import getting_the_price
-import json
-import time
-import flask
 
 def connect():
     try :
