@@ -30,7 +30,6 @@ def login():
         userid = str(user_info['userid'])
         products = dbHandle.get_products(userid)
         notifs = dbHandle.notify(products)
-
         return jsonify(success=1, user_info=user_info, products_info=products, notifs=notifs)
     else:
         return "logged in"

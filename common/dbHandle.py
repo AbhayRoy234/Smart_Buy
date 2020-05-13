@@ -11,11 +11,12 @@ def connect():
             host='us-cdbr-east-06.cleardb.net',
             user='b277c5bb846d1b',
             password='2341e971',
-            database='`heroku_ba21d3848c7d868`',
+            database='heroku_ba21d3848c7d868',
         )
     except :
         connect()
     return mydb
+# mysql://b277c5bb846d1b:2341e971@us-cdbr-east-06.cleardb.net/heroku_ba21d3848c7d868?reconnect=true
 
 def user_registration(username: str, emailid: str, passwd: str):
     mydb = connect()
@@ -134,8 +135,8 @@ def get_userdetails(email: str):
 # success = user_registration("Amit kumar","amitkr0921@gmail.com","Amitkr943")
 # print(success)
 
-product=get_products("1")
-print(product)
+# product=get_products("1")
+# print(product)
 #
 # user_info = get_userdetails("amitkr0921@gmail.com")
 # print(user_info)
