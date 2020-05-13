@@ -8,15 +8,14 @@ import flask
 def connect():
     try :
         mydb = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='amit',
-            database='smart_price',
+            host='us-cdbr-east-06.cleardb.net',
+            user='b277c5bb846d1b',
+            password='2341e971',
+            database='`heroku_ba21d3848c7d868`',
         )
     except :
         connect()
     return mydb
-
 
 def user_registration(username: str, emailid: str, passwd: str):
     mydb = connect()
