@@ -4,7 +4,8 @@ from common import dbHandle
 
 app = Flask(__name__)
 
-@app.route('/login', methods=["POST"])
+
+@app.route('/login', methods=["POST", "GET"])
 def login():
     form_data = request.form.to_dict()
     email = form_data['email']
@@ -34,7 +35,8 @@ def login():
     else:
         return "logged in"
 
-@app.route('/register', methods=["POST"])
+
+@app.route('/register', methods=["POST", "GET"])
 def register():
     form_data = request.form.to_dict()
     name = form_data['name']
@@ -74,7 +76,8 @@ def register():
     elif success == 0:
         return "Email already exists, Please login"
 
-@app.route('/dashboard', methods=["POST"])
+
+@app.route('/dashboard', methods=["POST", "GET"])
 def dashboard():
     data = request.form.to_dict()
     userid = data['userid']
@@ -85,7 +88,8 @@ def dashboard():
     print(notifs)
     return jsonify(success=1, user_info=data, products_info=products, notifs=notifs)
 
-@app.route('/addproduct', methods=["POST"])
+
+@app.route('/addproduct', methods=["POST", "GET"])
 def addproduct():
     data = request.form.to_dict()
     print(data)
