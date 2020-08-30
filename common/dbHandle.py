@@ -13,6 +13,7 @@ def connect():
     except :
         connect()
     return mydb
+
 # mysql://b277c5bb846d1b:2341e971@us-cdbr-east-06.cleardb.net/heroku_ba21d3848c7d868?reconnect=true
 
 def user_registration(username: str, emailid: str, passwd: str):
