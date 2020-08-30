@@ -5,6 +5,5 @@ Currently supported website are amazon, flipkart, myntra and ajio.
 
 It's really easy to use, user just need to login and paste the link of the product.
 
-Both web and android versions make API call to backend which fetch data
-
-The app make an API call which is build in python.
+Both web and android versions make API call to backend which fetch data.
+The API is build in python and is backed up with a database.
