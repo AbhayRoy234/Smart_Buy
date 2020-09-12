@@ -5,7 +5,7 @@ import re
 header = {
     'User-Agent': 'Monzilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
 
-#<span class="_35KyD6">IFB 6 kg 2D Wash Fully Automatic Front Load with In-built Heater White&nbsp;&nbsp;(Diva Aqua VX)</span>
+
 def flipkart(flipkart_url):
     tag_name="div"
     query= {"class":"_1vC4OE _3qQ9m1"}
@@ -27,6 +27,7 @@ def amazon(amazon_url):
     price = float(soup.find_all(tag_name, query)[0].text[2:].replace(",", ""))
     productName = soup.find("title").text.split(":")[0]
     return price, productName
+
 
 def myntra(myntra_url):
     tag_name= "script"

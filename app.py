@@ -18,13 +18,13 @@ def login():
     success = dbHandle.login(email, passwd)
     print(success)
     if success == -1:
-        print("Email id not found")
+        # print("Email id not found")
         return "email id not found please register"
     elif success == 0:
-        print("Incorrect password")
+        # print("Incorrect password")
         return "incorrect password"
     elif success == 1:
-        print("Login Success")
+        # print("Login Success")
         # session['email'] = email
         user_info = dbHandle.get_userdetails(email)
         userid = str(user_info['userid'])
@@ -43,7 +43,7 @@ def register():
     email = form_data['email']
     passwdchk = form_data['passcheck']
     emailexp = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
-    print(name, email, passwd)
+    # print(name, email, passwd)
     if name == '':
         return "Please enter your name"
     elif not re.match(emailexp,email):
@@ -66,7 +66,7 @@ def register():
 
     if success == 1:
         # session[email] = email
-        print("success")
+        # print("success")
         user_info = dbHandle.get_userdetails(email)
         products = []
         notifs = []
@@ -80,25 +80,25 @@ def register():
 def dashboard():
     data = request.form.to_dict()
     userid = data['userid']
-    print(data)
+    # print(data)
     products = dbHandle.get_products(userid)
     notifs = dbHandle.notify(products)
-    print(products)
-    print(notifs)
+    # print(products)
+    # print(notifs)
     return jsonify(success=1, user_info=data, products_info=products, notifs=notifs)
 
 
 @app.route('/addproduct', methods=["POST", "GET"])
 def addproduct():
     data = request.form.to_dict()
-    print(data)
+    # print(data)
     url = data['url']
     userid = int(data['userid'])
     addproduct = dbHandle.add_product(url,url,userid)
     del data['url']
     products = dbHandle.get_products(str(userid))
     notifs = dbHandle.notify(products)
-    print(products)
+    # print(products)
     return jsonify(addproduct=addproduct, success=1,user_info=data, products_info=products, notifs=notifs)
 
 

@@ -71,6 +71,7 @@ def add_product(url: str,aff_url:str, userid: int):
     mydb.commit()
     return 1
 
+
 def get_products(userid: str):
     mydb = connect()
     mycursor = mydb.cursor()
@@ -98,6 +99,7 @@ def get_products(userid: str):
                             "product_name": list[0][5][0:20]}
             productlist.append(tempdict)
         return productlist
+
 
 def notify(products) :
     notifylist = []
